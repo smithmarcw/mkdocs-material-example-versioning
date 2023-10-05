@@ -1,3 +1,3 @@
 # Foo
-more stuffers for dev
+more stuffers for 2.0
 here
