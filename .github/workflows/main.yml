@@ -1,0 +1,36 @@
+name: mkdocs-ci 
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material 
+      - run: pip install pygments
+      - run: pip install mike
+      - run: pip install pymdown-extensions 
+      - run: pip install mkdocs-callouts
+      - run: pip install mkdocs-glightbox
+      - run: pip3 install mkdocs-print-site-plugin
+      - run: pip install mkdocs-git-revision-date-localized-plugin
+      - run: mike deploy --update-aliases $CS_VERSION latest
+      - run: mike set-default --push latest
+
