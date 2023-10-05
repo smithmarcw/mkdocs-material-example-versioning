@@ -1,6 +1,6 @@
 name: mkdocs-ci 
 env:
-  cs_version: '1.0'
+  cs_version: '1.1'
 on:
   push:
     branches:
