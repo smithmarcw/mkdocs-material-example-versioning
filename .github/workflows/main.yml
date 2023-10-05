@@ -1,4 +1,4 @@
-name: mkdocs-ci 
+name: mike-ci 
 env:
   cs_version: '1.1'
   user.name: 'smithmarcw'
@@ -37,6 +37,7 @@ jobs:
       - run: pip3 install mkdocs-print-site-plugin
       - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: echo $cs_version
+      - run: git config user.name smithmarcw && git config user.email marc.smith@spirent.com
       - run: mike deploy --update-aliases $cs_version latest
       - run: mike set-default --push latest
 
