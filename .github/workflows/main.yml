@@ -1,6 +1,6 @@
 name: mike-ci 
 env:
-  cs_version: '1.2'
+  cs_version: '-p 1.2 '
   user.name: 'smithmarcw'
   user.email: 'marc.smith@spirent.com'
 on:
@@ -38,6 +38,6 @@ jobs:
       - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: echo $cs_version
       - run: git config user.name smithmarcw && git config user.email marc.smith@spirent.com
-      - run: mike deploy --update-aliases $cs_version latest
-     # - run: mike set-default --push latest
+      - run: mike deploy --update-aliases $cs_version 
+      #- run: mike set-default --push latest
 
