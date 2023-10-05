@@ -1,6 +1,6 @@
 name: mike-ci 
 env:
-  cs_version: '2.0 -t dev'
+  cs_version: '2.0 latest'
   user.name: 'smithmarcw'
   user.email: 'marc.smith@spirent.com'
 on:
