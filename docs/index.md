@@ -1,4 +1,4 @@
-# Welcome to My Docs 1.1
+# Welcome to My Docs 1.2
 
 More text updates
 
