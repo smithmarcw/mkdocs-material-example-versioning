@@ -1,6 +1,6 @@
 name: mike-ci 
 env:
-  cs_version: '2.0 latest'
+  cs_version: 'dev'
   user.name: 'smithmarcw'
   user.email: 'marc.smith@spirent.com'
 on:
@@ -39,4 +39,10 @@ jobs:
       - run: echo $cs_version
       - run: git config user.name smithmarcw && git config user.email marc.smith@spirent.com
       - run: mike deploy --update-aliases $cs_version 
-      - run: mike set-default --push latest
+  # push this one when updating latest release
+     # - run: mike set-default --push latest
+
+  # uncomment next line out when pushing unreleased documentation
+      - run: mike set-default --push dev
+  # when releasing uncomment this.
+  #    - run:  mike retitle dev $cs_version
