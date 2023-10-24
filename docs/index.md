@@ -1,5 +1,7 @@
 # Welcome to My Docs dev
 
+more changes to 3.0
+
 More text updates
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).

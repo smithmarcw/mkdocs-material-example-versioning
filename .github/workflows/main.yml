@@ -43,6 +43,6 @@ jobs:
      # - run: mike set-default --push latest
 
   # uncomment next line out when pushing unreleased documentation
-      - run: mike set-default --push dev
+      - run: mike set-default --push latest
   # when releasing uncomment this.
   #    - run:  mike retitle dev $cs_version
