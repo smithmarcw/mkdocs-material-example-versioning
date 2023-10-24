@@ -38,7 +38,7 @@ jobs:
       - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: echo $cs_version
       - run: git config user.name smithmarcw && git config user.email marc.smith@spirent.com
-      - run: mike deploy --update-aliases $cs_version 
+      - run: mike deploy --push --update-aliases $cs_version 
   # when releasing uncomment this.
   #    - run:  mike retitle dev $cs_version      
   # push this one when updating latest release
