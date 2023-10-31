@@ -1,6 +1,6 @@
 name: mike-ci 
 env:
-  cs_version: '4'
+  cs_version: '4.0'
   user.name: 'smithmarcw'
   user.email: 'marc.smith@spirent.com'
 on:
@@ -45,5 +45,5 @@ jobs:
   #    - run: mike set-default --push latest
 
   # uncomment next line out when pushing unreleased documentation
-      - run: mike deploy --push 
+      - run: mike deploy $cs_version --push 
 
